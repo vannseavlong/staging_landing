@@ -1,0 +1,25 @@
+{
+  "id": "navbar",
+  "logo": {
+    "id": "navbar_logo",
+    "alt": "bEasy Logo"
+  },
+  "navigation": {
+    "hero": "首页",
+    "services": "服务",
+    "about": "关于我们",
+    "testimonials": "客户评价",
+    "faq": "常见问题",
+    "install": "安装",
+    "contact": "联系我们",
+    "footer": "页脚"
+  },
+  "downloadButton": {
+    "id": "navbar_download_button",
+    "text": "下载应用"
+  },
+  "contactButton": {
+    "id": "navbar_contact_button",
+    "text": "联系我们"
+  }
+}

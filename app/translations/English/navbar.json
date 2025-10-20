@@ -1,0 +1,25 @@
+{
+  "id": "navbar",
+  "logo": {
+    "id": "navbar_logo",
+    "alt": "bEasy Logo"
+  },
+  "navigation": {
+    "hero": "Hero",
+    "services": "Services",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "install": "Install",
+    "contact": "Contact",
+    "footer": "Footer"
+  },
+  "downloadButton": {
+    "id": "navbar_download_button",
+    "text": "Download App"
+  },
+  "contactButton": {
+    "id": "navbar_contact_button",
+    "text": "Contact Us"
+  }
+}
