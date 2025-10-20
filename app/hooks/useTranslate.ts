@@ -4,8 +4,14 @@ import { useLanguage } from "@/app/contexts/LanguageContext";
 
 // Type for translation keys with dot notation support
 type TranslationKey = string;
-type TranslationValue = string | number | boolean | TranslationObject;
+type TranslationValue =
+  | string
+  | number
+  | boolean
+  | TranslationObject
+  | TranslationArray;
 type TranslationObject = { [key: string]: TranslationValue };
+type TranslationArray = TranslationValue[];
 
 // Translation data cache to avoid re-importing
 const translationCache: Record<string, TranslationObject> = {};
@@ -14,16 +20,22 @@ const translationCache: Record<string, TranslationObject> = {};
 import navbarEn from "@/app/translations/English/navbar.json";
 import navbarKm from "@/app/translations/Khmer/navbar.json";
 import navbarZh from "@/app/translations/Chinese/navbar.json";
+import sectionAEn from "@/app/translations/English/sectionA.json";
+import sectionAKm from "@/app/translations/Khmer/sectionA.json";
+import sectionAZh from "@/app/translations/Chinese/sectionA.json";
 
 const translations: Record<string, Record<string, TranslationObject>> = {
   English: {
     navbar: navbarEn,
+    sectionA: sectionAEn,
   },
   Khmer: {
     navbar: navbarKm,
+    sectionA: sectionAKm,
   },
   Chinese: {
     navbar: navbarZh,
+    sectionA: sectionAZh,
   },
 };
 
@@ -90,8 +102,13 @@ export function useTranslate() {
     // Navigate through nested keys
     let value: TranslationValue = sectionData;
     for (const part of pathParts) {
-      if (value && typeof value === "object" && part in value) {
-        value = value[part];
+      if (
+        value &&
+        typeof value === "object" &&
+        !Array.isArray(value) &&
+        part in value
+      ) {
+        value = (value as TranslationObject)[part];
       } else {
         return fallback || key; // Return fallback or the key itself
       }

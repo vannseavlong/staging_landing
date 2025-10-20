@@ -10,7 +10,8 @@ import TestimonialSection from "./components/sections/TestimonialSection";
 export default function Home() {
   return (
     <div className="font-sans min-h-screen">
-      <main className="max-w-6xl mx-auto px-6 py-12 space-y-16">
+      {/* <main className="max-w-6xl mx-auto px-6 py-12 space-y-16"> */}
+      <main>
         <section id="hero">
           <HeroSection />
         </section>

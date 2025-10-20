@@ -9,7 +9,7 @@ import { handleSmartDownload } from "@/lib/smartDownload";
 
 export default function SiteNav() {
   return (
-    <nav className="w-full bg-white sticky top-0 z-50 border-b">
+    <nav className="w-full bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}

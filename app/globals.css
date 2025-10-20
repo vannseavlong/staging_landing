@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,6 +51,10 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
+  
+  /* bEasy brand gradient */
+  --beasy-gradient: linear-gradient(300deg, #1B4CFA 0%, #102C90 100%);
+
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -122,4 +129,60 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute !important;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 10px;
+  border-radius: 50% !important;
+  color: white !important;
+  font-size: 24px !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  z-index: 10 !important;
+}
+
+.swiper-button-prev {
+  left: 10px !important;
+}
+
+.swiper-button-next {
+  right: 10px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--beasy-gradient) !important;
+  box-shadow: 0 4px 12px rgba(27, 76, 250, 0.3) !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #D1D5DB !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--beasy-gradient) !important;
+  width: 24px !important;
+  border-radius: 5px !important;
 }
