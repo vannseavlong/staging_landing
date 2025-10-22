@@ -4,7 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 
-export default function LanguageDropdown() {
+interface LanguageDropdownProps {
+  compact?: boolean;
+}
+
+export default function LanguageDropdown({
+  compact = false,
+}: LanguageDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { currentLanguageCode, changeLanguage, languages } = useLanguage();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -38,17 +44,21 @@ export default function LanguageDropdown() {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center gap-2 py-2 transition-colors"
+        className={`flex items-center gap-2 transition-colors ${
+          compact ? "py-1 px-2" : "py-2"
+        }`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Select language"
       >
         <Image
           src={currentLang?.flag || "/icons/flags/EnFlag.webp"}
           alt={`${currentLang?.name} flag`}
-          width={24}
-          height={18}
+          width={compact ? 18 : 24}
+          height={compact ? 14 : 18}
         />
-        <span className="font-medium text-sm">{currentLang?.displayName}</span>
+        <span className={`font-medium ${compact ? "text-xs" : "text-sm"}`}>
+          {currentLang?.displayName}
+        </span>
         <span className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>
           <svg
             width="14"
