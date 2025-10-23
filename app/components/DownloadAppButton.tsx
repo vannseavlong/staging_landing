@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslate } from "@/app/hooks/useTranslate";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 
 interface DownloadAppButtonProps {
   className?: string;
@@ -34,6 +35,8 @@ export default function DownloadAppButton({
     </span>
   );
 
+  const { currentLanguageCode } = useLanguage();
+
   if (onClick) {
     return (
       <button
@@ -45,10 +48,16 @@ export default function DownloadAppButton({
     );
   }
 
+  const href = `/download/${currentLanguageCode}`;
+
   return (
     <a
-      href="/download"
+      href={href}
       className={`group inline-block px-6 py-2 bg-[image:var(--beasy-gradient)] text-white hover:opacity-90 transition-opacity text-sm font-medium ${className}`}
+      onClick={(e) => {
+        // Prevent navigation to avoid 404 on language-suffixed routes
+        e.preventDefault();
+      }}
     >
       {inner}
     </a>

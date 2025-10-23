@@ -23,19 +23,25 @@ import navbarZh from "@/app/translations/Chinese/navbar.json";
 import sectionAEn from "@/app/translations/English/sectionA.json";
 import sectionAKm from "@/app/translations/Khmer/sectionA.json";
 import sectionAZh from "@/app/translations/Chinese/sectionA.json";
+import faqEn from "@/app/translations/English/faqSection.json";
+import faqKm from "@/app/translations/Khmer/faqSection.json";
+import faqZh from "@/app/translations/Chinese/faqSection.json";
 
 const translations: Record<string, Record<string, TranslationObject>> = {
   English: {
     navbar: navbarEn,
     sectionA: sectionAEn,
+    faqSection: faqEn,
   },
   Khmer: {
     navbar: navbarKm,
     sectionA: sectionAKm,
+    faqSection: faqKm,
   },
   Chinese: {
     navbar: navbarZh,
     sectionA: sectionAZh,
+    faqSection: faqZh,
   },
 };
 

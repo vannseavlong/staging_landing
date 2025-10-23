@@ -1,0 +1,162 @@
+{
+  "id": "faqSection",
+  "header": {
+    "subtitle": "FAQ",
+    "title": "Everything You Need to Know",
+    "description": "Quick answers to your most common questions−so you can book, manage, and enjoy our cleaning service with ease."
+  },
+  "showMoreButton": "Show More",
+  "showLessButton": "Show Less",
+  "faqs": [
+    {
+      "category": "General",
+      "items": [
+        {
+          "id": "faq_1",
+          "question": "What types of services do you offer?",
+          "answer": "We offer General Cleaning (Residential), Deep Cleaning (Residential), Office Cleaning, Upholstery Cleaning (Sofa & Carpet), and Pest Control (Insecticide Spray & Cold Fogging)"
+        },
+        {
+          "id": "faq_2",
+          "question": "Do you provide one-time cleaning or only recurring services?",
+          "answer": "Currently we only provide on-demand services. Keep a lookout for updates in the app!"
+        },
+        {
+          "id": "faq_3",
+          "question": "Can I book a same-day or urgent cleaning?",
+          "answer": "Yes, it depends on the availability of the cleaners. If there are no available cleaners, please contact us immediately."
+        },
+        {
+          "id": "faq_4",
+          "question": "Are cleaning supplies and equipment provided, or do I need to prepare them?",
+          "answer": "Our cleaners bring everything needed unless you prefer to use your own. Please provide our cleaners an electrical and water source."
+        }
+      ]
+    },
+    {
+      "category": "Booking & Scheduling",
+      "items": [
+        {
+          "id": "faq_5",
+          "question": "How do I book a cleaning service through the app?",
+          "answer": "Select the service you wish to book, choose the type of property that best describes the area you're looking to clean, input your address, and your preferred time and day. Booking can be made as quickly as 30 seconds!"
+        },
+        {
+          "id": "faq_6",
+          "question": "Can I reschedule or cancel my booking?",
+          "answer": "Yes you may do so in the app. We discourage rescheduling or cancelling as our cleaners have already booked that slot for you!"
+        },
+        {
+          "id": "faq_7",
+          "question": "How far in advance do I need to book?",
+          "answer": "We recommend booking at least 24 hours ahead."
+        },
+        {
+          "id": "faq_8",
+          "question": "Can I request a specific date and time?",
+          "answer": "Yes, you can choose your preferred schedule when booking."
+        }
+      ]
+    },
+    {
+      "category": "Pricing & Payment",
+      "items": [
+        {
+          "id": "faq_9",
+          "question": "How much does the cleaning service cost?",
+          "answer": "Pricing depends on the service type, location, area, and duration. See the app for more details!"
+        },
+        {
+          "id": "faq_10",
+          "question": "Are there any hidden fees?",
+          "answer": "No hidden fees. All charges are shown before confirming the booking."
+        },
+        {
+          "id": "faq_11",
+          "question": "What payment methods do you accept?",
+          "answer": "We accept Visa/Mastercard Payment, ABA Pay, and cash-on-delivery."
+        },
+        {
+          "id": "faq_12",
+          "question": "Is payment done before or after the service?",
+          "answer": "Payment is usually made in advance through the app for confirmation."
+        }
+      ]
+    },
+    {
+      "category": "Cleaners & Quality Assurance",
+      "items": [
+        {
+          "id": "faq_13",
+          "question": "Are your cleaners background-checked?",
+          "answer": "Yes. All cleaners are thoroughly checked and screened for safety purposes."
+        },
+        {
+          "id": "faq_14",
+          "question": "Are the cleaners trained and experienced?",
+          "answer": "All cleaners undergo intensive mandatory training. Only after the completion of this training then they are able to work."
+        },
+        {
+          "id": "faq_15",
+          "question": "What happens if I am not satisfied with the cleaning?",
+          "answer": "Let us know within 24 hours, and we'll arrange a solution for you."
+        },
+        {
+          "id": "faq_16",
+          "question": "Do you replace cleaners if one is unavailable?",
+          "answer": "Yes, we'll assign another qualified cleaner to ensure your booking is met."
+        }
+      ]
+    },
+    {
+      "category": "Safety & Policies",
+      "items": [
+        {
+          "id": "faq_17",
+          "question": "Is the service insured against damages?",
+          "answer": "Yes. We provide partial or full coverage for any accidental damages during service upon investigation."
+        },
+        {
+          "id": "faq_18",
+          "question": "What if something is broken or stolen during cleaning?",
+          "answer": "Contact us immediately. We take such matters very seriously."
+        },
+        {
+          "id": "faq_19",
+          "question": "How do you ensure safety during the cleaning process?",
+          "answer": "We follow strict safety protocols and use approved cleaning materials to ensure everything is safe for both the cleaners and yourself."
+        },
+        {
+          "id": "faq_20",
+          "question": "Do cleaners wear uniforms or ID badges?",
+          "answer": "Yes. Our cleaners wear identifiable uniforms and carry an ID tag that identifies themselves."
+        },
+        {
+          "id": "faq_21",
+          "question": "What is your cancellation policy?",
+          "answer": "Please refer to the app for more details."
+        }
+      ]
+    },
+    {
+      "category": "Special Requests",
+      "items": [
+        {
+          "id": "faq_22",
+          "question": "My house has pets living in them, is that okay?",
+          "answer": "Yes, that's perfectly fine! Please make sure to select the “house with pets” options before booking!"
+        },
+        {
+          "id": "faq_23",
+          "question": "Do you provide post-renovation cleaning?",
+          "answer": "Yes we do. Please contact us for more information."
+        },
+        {
+          "id": "faq_24",
+          "question": "Am I able to request ironing services?",
+          "answer": "Yes! Please select the “ironing” service add-on during the selection of service."
+        }
+      ]
+    }
+  ]
+}

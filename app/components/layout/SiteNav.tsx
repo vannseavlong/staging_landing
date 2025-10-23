@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 import { ContactUsButton, DownloadAppButton, LanguageDropdown } from "..";
 import { handleSmartDownload } from "@/lib/smartDownload";
 import { useState } from "react";
@@ -9,6 +10,7 @@ import { useState } from "react";
 // import { NAV_ITEMS } from "../navigation";
 
 export default function SiteNav() {
+  const { currentLanguageCode } = useLanguage();
   const [open, setOpen] = useState(false);
   return (
     <nav className="w-full bg-white sticky top-0 z-50">
@@ -16,7 +18,7 @@ export default function SiteNav() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="logo">
-            <Link href="/">
+            <Link href={`/${currentLanguageCode}`}>
               <Image
                 src="/images/new-logo.png"
                 alt="bEasy Logo"
