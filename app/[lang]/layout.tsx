@@ -9,11 +9,12 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "km" }, { lang: "zh" }];
 }
 
-export default function LangLayout({
-  children,
-}: {
-  children: React.ReactNode;
-  params: { lang: string };
-}) {
+export default async function LangLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { lang: string } | Promise<{ lang: string }>;
+  }>
+) {
+  const { children } = props;
   return <>{children}</>;
 }
