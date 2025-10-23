@@ -1,6 +1,8 @@
 "use client";
 
 import { useTranslate } from "@/app/hooks/useTranslate";
+import { usePathname, useRouter } from "next/navigation";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 
 interface ContactUsButtonProps {
   className?: string;
@@ -34,6 +36,10 @@ export default function ContactUsButton({
     </span>
   );
 
+  const pathname = usePathname() || "/";
+  const router = useRouter();
+  const { currentLanguageCode = "en" } = useLanguage();
+
   if (onClick) {
     return (
       <button
@@ -45,12 +51,43 @@ export default function ContactUsButton({
     );
   }
 
+  const handleGoToContact = async (e?: React.MouseEvent) => {
+    e?.preventDefault();
+
+    const lang = currentLanguageCode || "en";
+    const targetPath = `/${lang}`;
+
+    // If already on the language root page, just scroll
+    if (pathname === targetPath || pathname === `${targetPath}/`) {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
+
+    // Otherwise navigate to the language home then scroll after mount
+    try {
+      await router.push(targetPath);
+      // small delay to allow client to render the section
+      setTimeout(() => {
+        const el = document.getElementById("contact");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    } catch {
+      // fallback: open anchor on same page
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <a
-      href="/contact"
+    <button
+      type="button"
+      onClick={handleGoToContact}
       className={`group inline-block px-8 py-3 border-[1px] border-[#E8E8E8] text-gray-800 text-[16px] font-medium hover:bg-gray-50 transition-colors ${className}`}
     >
       {inner}
-    </a>
+    </button>
   );
 }
