@@ -47,7 +47,7 @@ export default function ContactSection() {
               <div className="hidden lg:block w-full h-auto max-w-[600px] lg:-mt-8">
                 <Image
                   className="w-full h-full object-cover "
-                  src="/location.png"
+                  src="/images/location.png"
                   alt="Location map (desktop)"
                   width={600}
                   height={400}
@@ -59,7 +59,7 @@ export default function ContactSection() {
               <div className="hidden md:block lg:hidden w-screen -mx-6 h-auto">
                 <Image
                   className="w-full h-full object-cover"
-                  src="/image.png"
+                  src="/images/location.png"
                   alt="Location map (tablet)"
                   width={1200}
                   height={500}
@@ -71,7 +71,7 @@ export default function ContactSection() {
               <div className="block md:hidden w-screen -mx-6 h-auto">
                 <Image
                   className="w-full h-full object-cover"
-                  src="/location.png"
+                  src="/images/location.png"
                   alt="Location map (mobile)"
                   width={800}
                   height={400}

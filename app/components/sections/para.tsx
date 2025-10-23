@@ -1,8 +1,6 @@
-'use client';
+"use client";
 
-import { FC, useEffect, useState } from "react";
-import { Shield, Users, RefreshCcw, Clock } from "lucide-react";
-
+import { FC } from "react";
 import Image from "next/image";
 
 // ✅ Feature section data and component
@@ -12,7 +10,7 @@ const features = [
 
     icon: (
       <Image
-        src="/Quick_Booking.png"  
+        src="/Quick_Booking.png"
         alt="Quick Booking Icon"
         width={44}
         height={44}
@@ -27,7 +25,7 @@ const features = [
     // icon: <RefreshCcw className="w-[44px] h-[44px] text-blue-600" />,
     icon: (
       <Image
-        src="/Flexible_Schedule.png"  
+        src="/Flexible_Schedule.png"
         alt="Flexible Schedule Icon"
         width={44}
         height={44}
@@ -42,7 +40,7 @@ const features = [
     // icon: <Shield className="w-[44px] h-[44px] text-blue-600" />,
     icon: (
       <Image
-        src="/Sefty.png"  
+        src="/Sefty.png"
         alt="Sefty Icon"
         width={44}
         height={44}
@@ -57,7 +55,7 @@ const features = [
     // icon: <Users className="w-[44px] h-[44px] text-blue-600" />,
     icon: (
       <Image
-        src="/Professional_Cleaner.png"  
+        src="/Professional_Cleaner.png"
         alt="Professional Cleaner Icon"
         width={44}
         height={44}
@@ -74,10 +72,7 @@ const FeatureSectionWithDividers: FC = () => {
   return (
     <section className="bg-white pb-5">
       <div className="max-w-8xl mx-auto">
-       
-
-
-         <div className="hidden md:hidden lg:flex divide-x divide-gray-200 border-t border-b border-r border-l">
+        <div className="hidden md:hidden lg:flex divide-x divide-gray-200 border-t border-b border-r border-l">
           {features.map((item, i) => (
             <div key={i} className="flex-1 p-8 text-center">
               <div className="flex lg:justify-center mb-4">{item.icon}</div>
@@ -91,10 +86,7 @@ const FeatureSectionWithDividers: FC = () => {
           ))}
         </div>
 
-        
-
-
-            <div className="lg:hidden md:hidden grid grid-cols-1  gap-6  mt-6">
+        <div className="lg:hidden md:hidden grid grid-cols-1  gap-6  mt-6">
           {features.map((item, i) => (
             <div key={i} className="p-6 text-center ">
               <div className="flex justify-center mb-4">{item.icon}</div>
@@ -108,8 +100,8 @@ const FeatureSectionWithDividers: FC = () => {
           ))}
         </div>
 
-{/* tablet */}
-<div className="hidden lg:hidden md:grid md:grid-cols-2   md:gap-0 ">
+        {/* tablet */}
+        <div className="hidden lg:hidden md:grid md:grid-cols-2   md:gap-0 ">
           {features.map((item, i) => (
             <div key={i} className="p-6 text-center  border  ">
               <div className="flex justify-center mb-4">{item.icon}</div>
@@ -122,7 +114,6 @@ const FeatureSectionWithDividers: FC = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -130,8 +121,6 @@ const FeatureSectionWithDividers: FC = () => {
 
 // ✅ Main section (Para)
 const Para = () => {
-
-  
   return (
     <section className="bg-white md:py-20 lg:py-5 px-6 text-white">
       {/* Header */}
@@ -150,8 +139,9 @@ const Para = () => {
         </h1>
         <div className="flex justify-start w-full mb-10 md:justify-start lg:justify-end lg:w-[60%] lg:py-5">
           <p className="text-[#3D3D3D] font-normal font-inter text-base  leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
-            Our on-demand cleaners are professionally trained, background-checked,
-            and committed to delivering spotless results every time.
+            Our on-demand cleaners are professionally trained,
+            background-checked, and committed to delivering spotless results
+            every time.
           </p>
         </div>
       </div>
@@ -170,33 +160,25 @@ const Para = () => {
         </div>
       </div> */}
 
-
       {/* Parallax Image Section */}
 
-<div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden -mx-6">
-  {/* Background layer (relative to this section only) */}
-  <div className="absolute inset-0">
-    {/* Mobile */}
-    <div className="block md:hidden bg-[url('/m.png')] bg-cover bg-center  h-full w-full"></div>
+      <div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden -mx-6">
+        {/* Background layer (relative to this section only) */}
+        <div className="absolute inset-0">
+          {/* Mobile */}
+          <div className="block md:hidden bg-[url('/m.png')] bg-cover bg-center  h-full w-full"></div>
 
-    
+          {/* Tablet */}
+          <div className="hidden md:block lg:hidden bg-[url('/Why.png')] bg-cover bg-center bg-fixed h-full w-full"></div>
 
-    {/* Tablet */}
-    <div className="hidden md:block lg:hidden bg-[url('/Why.png')] bg-cover bg-center bg-fixed h-full w-full">
-    </div>
+          {/* Desktop */}
+          <div className="hidden lg:block bg-[url('/Why.png')] bg-no-repeat  bg-center bg-contain bg-fixed h-full w-full"></div>
+        </div>
+      </div>
 
-    {/* Desktop */}
-    <div className="hidden lg:block bg-[url('/Why.png')] bg-no-repeat  bg-center bg-contain bg-fixed h-full w-full"></div>
-  </div>
-</div>
-
-
-
-
-      <div className="-mx-6"> 
+      <div className="-mx-6">
         <FeatureSectionWithDividers />
       </div>
-      
     </section>
   );
 };
