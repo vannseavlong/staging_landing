@@ -166,10 +166,10 @@ const Para = () => {
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}
-          <div className="block md:hidden bg-[url('/m.png')] bg-cover bg-center  h-full w-full"></div>
+          <div className="block md:hidden bg-[url('/Why_Choose_us_Draft_ mobile.png')] bg-center bg-contain   h-full w-full"></div>
 
           {/* Tablet */}
-          <div className="hidden md:block lg:hidden bg-[url('/Why.png')] bg-cover bg-center bg-fixed h-full w-full"></div>
+          <div className="hidden md:block lg:hidden bg-[url('/Why_Choose_us_tablet.png')] bg-center bg-contain bg-fixed h-full w-full"></div>
 
           {/* Desktop */}
           <div className="hidden lg:block bg-[url('/Why.png')] bg-no-repeat  bg-center bg-contain bg-fixed h-full w-full"></div>

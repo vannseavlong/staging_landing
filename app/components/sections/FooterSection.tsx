@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
-import { Button } from "../ui/button";
+
 import { useLanguage } from "@/app/contexts/LanguageContext";
 
 export default function FooterSection() {
@@ -14,7 +14,7 @@ export default function FooterSection() {
 
   return (
     <footer
-      className="text-black border-t font-inter py-20 pb-10 lg:py-20 lg:mt-20 px-6 md:px-8 relative overflow-hidden bg-white"
+      className="text-black border-t font-inter py-20 pb-10 lg:py-20 lg:mt-20 px-10 lg:px-10 md:px-8 relative overflow-hidden bg-white"
       aria-label="Footer section"
     >
       <div className="grid grid-cols-1 gap-10 lg:gap-30 md:grid-cols-1 lg:grid-cols-2">
@@ -37,79 +37,61 @@ export default function FooterSection() {
             Penh, Cambodia.
           </p>
 
+  <h3 className="text-sm font-medium text-bllack mt-4 ">Find us on</h3>
           <div className="flex flex-row md:flex-row justify-start items-center gap-6">
-            {/* App Store Button with link */}
-            <a
-              href="https://apps.apple.com/sg/app/beasy/id6745190697"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline"
-            >
-              <Button
-                variant="outline"
-                className="flex items-center h-[50px] bg-white text-black rounded-[10px] border border-gray-500 hover:bg-custom-gradient transition-colors"
-              >
-                <Image
-                  className="w-auto h-10 object-contain"
-                  src="/icons/download/apple.svg"
-                  alt="App Store"
-                  width={40}
-                  height={40}
-                  priority
-                />
-                <div className="flex flex-col items-start">
-                  <span className="text-xs text-black font-light">
-                    Download on the
-                  </span>
-                  <span className="text-lg font-semibold">App Store</span>
-                </div>
-              </Button>
-            </a>
 
-            {/* Google Play Button with link */}
-            <a
-              href="https://play.google.com/store/apps/details?id=suntel.beasy.app&hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline"
-            >
-              <Button
-                variant="outline"
-                className="flex items-center h-[50px] bg-white text-black rounded-[10px] border border-gray-500 hover:bg-custom-gradient transition-colors"
+            <div className="flex space-x-6 ">
+              <a
+                href="https://t.me/bEasy_kh"
+                aria-label="Telegram"
+                className="flex justify-center items-center w-10 h-10 rounded-full border bg-white text-black hover:bg-gray-300 transition-all duration-200"
+                onClick={() => handleSocialClick("Telegram")}
               >
-                <Image
-                  className="w-auto h-10 object-contain"
-                  src="/icons/download/googlePlay.webp"
-                  alt="Google Play"
-                  width={40}
-                  height={40}
-                  priority
-                />
-                <div className="flex flex-col items-start">
-                  <span className="text-xs text-black font-light">
-                    Get it on
-                  </span>
-                  <span className="text-lg font-semibold"> Google Play</span>
-                </div>
-              </Button>
-            </a>
+                <FaTelegram size={16} />
+              </a>
+              <a
+                href="https://www.facebook.com/bEasy.apps"
+                aria-label="Facebook"
+                className="flex justify-center items-center w-10 h-10 rounded-full border bg-white text-black hover:bg-gray-300 transition-all duration-200"
+                onClick={() => handleSocialClick("Facebook")}
+              >
+                <FaFacebookF size={16} />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@beasy_kh?_t=ZS-90hWgLOiOZu&_r=1"
+                aria-label="TikTok"
+                className="flex justify-center items-center w-10 h-10 rounded-full bg-white border text-black hover:bg-gray-300 transition-all duration-200"
+                onClick={() => handleSocialClick("TikTok")}
+              >
+                <FaTiktok size={16} />
+              </a>
+              <a
+                href="https://www.instagram.com/beasy.cambodia?igsh=MTB4Nm82bjN1enl2YQ=="
+                aria-label="Instagram"
+                className="flex justify-center items-center w-10 h-10 rounded-full bg-white border text-black hover:bg-gray-300 transition-all duration-200"
+                onClick={() => handleSocialClick("Instagram")}
+              >
+                <FaInstagram size={16} />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Column 2: Contact Info */}
-        <div className="flex justify-center lg:justify-center md:justify-start">
+        <div className="flex justify-center lg:justify-end gap-10 md:justify-start lg:px-15">
           <div className="flex flex-cols-2 gap-10">
             <div className="flex flex-wrap gap-20">
               {/* Company */}
               <div>
-                <h4 className="text-lg text-black font-bold  tracking-wide mb-2">
+                <h4 className="text-lg text-black font-bold  tracking-wide mb-4">
                   Company
                 </h4>
                 <ul className="text-base font-medium text-black space-y-4">
                   <li>
                     <Link
                       href={`/${currentLanguageCode}/term-of-condition`}
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm transition-colors"
                     >
                       Terms & Conditions
                     </Link>
@@ -117,7 +99,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href={`/${currentLanguageCode}/privacy-policy`}
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm transition-colors"
                     >
                       Privacy Policy
                     </Link>
@@ -127,14 +109,14 @@ export default function FooterSection() {
 
               {/* Services */}
               <div className="gap-10 space-y-4">
-                <h4 className="text-lg text-black font-bold  tracking-wide mb-2">
+                <h4 className="text-lg text-black font-bold  tracking-wide mb-4">
                   Services
                 </h4>
                 <ul className="text-base font-medium text-black space-y-4 hover:text-beasy-gradient">
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       General Cleaning
                     </Link>
@@ -142,7 +124,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Deep Cleaning
                     </Link>
@@ -150,7 +132,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Office Cleaning
                     </Link>
@@ -158,7 +140,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Upholstery
                     </Link>
@@ -166,7 +148,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Pest Control
                     </Link>
@@ -174,7 +156,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       AC Cleaning
                     </Link>
@@ -182,7 +164,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Post Renovation
                     </Link>
@@ -190,7 +172,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Laundry
                     </Link>
@@ -198,7 +180,7 @@ export default function FooterSection() {
                   <li>
                     <Link
                       href="#service"
-                      className="hover:underline underline-offset-2 decoration-2 transition-all duration-200"
+                      className="hover:underline text-sm  transition-colors"
                     >
                       Washing Machine
                     </Link>
@@ -216,41 +198,26 @@ export default function FooterSection() {
           © {new Date().getFullYear()} Suntel Technology. All rights reserved.
         </p>
 
-        <div className="flex space-x-4 ">
-          <a
-            href="https://t.me/bEasy_kh"
-            aria-label="Telegram"
-            className="flex justify-center items-center w-10 h-10 rounded-full bg-white text-black hover:bg-gray-300 transition-all duration-200"
-            onClick={() => handleSocialClick("Telegram")}
-          >
-            <FaTelegram size={16} />
-          </a>
-          <a
-            href="https://www.facebook.com/bEasy.apps"
-            aria-label="Facebook"
-            className="flex justify-center items-center w-10 h-10 rounded-full bg-white text-black hover:bg-gray-300 transition-all duration-200"
-            onClick={() => handleSocialClick("Facebook")}
-          >
-            <FaFacebookF size={16} />
-          </a>
 
-          <a
-            href="https://www.tiktok.com/@beasy_kh?_t=ZS-90hWgLOiOZu&_r=1"
-            aria-label="TikTok"
-            className="flex justify-center items-center w-10 h-10 rounded-full bg-white text-black hover:bg-gray-300 transition-all duration-200"
-            onClick={() => handleSocialClick("TikTok")}
-          >
-            <FaTiktok size={16} />
-          </a>
-          <a
-            href="https://www.instagram.com/beasy.cambodia?igsh=MTB4Nm82bjN1enl2YQ=="
-            aria-label="Instagram"
-            className="flex justify-center items-center w-10 h-10 rounded-full bg-white text-black hover:bg-gray-300 transition-all duration-200"
-            onClick={() => handleSocialClick("Instagram")}
-          >
-            <FaInstagram size={16} />
-          </a>
-        </div>
+
+         <div className="flex flex-wrap justify-center sm:justify-end gap-4 ">
+            <Link
+             href={`/${currentLanguageCode}/term-of-condition`}
+              className=" hover:underline text-sm transition-colors "
+              aria-label="Terms of Service"
+            >
+              Terms of Service
+            </Link>
+            <span className=" text-black">•</span>
+            <Link
+               href={`/${currentLanguageCode}/privacy-policy`}
+              className=" hover:underline text-sm  transition-colors "
+              aria-label="Privacy Policy"
+            >
+              Privacy Policy
+            </Link>
+          </div>
+
       </div>
     </footer>
   );

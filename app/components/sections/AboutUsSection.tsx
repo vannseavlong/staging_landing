@@ -117,7 +117,7 @@ const FeatureSectionWithDividers: FC = () => {
 // ✅ Main section (Para)
 const Para = () => {
   return (
-    <section className="bg-white md:py-20 lg:py-5 px-6 text-white">
+    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">
@@ -143,21 +143,21 @@ const Para = () => {
 
       {/* Parallax Image Section */}
 
-      <div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden -mx-6">
+      <div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden -mx-10">
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}
-          <div className="block md:hidden bg-[url('/images/about/m.png')] bg-cover bg-center  h-full w-full"></div>
+          <div className="block md:hidden bg-[url('/images/Why_Choose_us_Draft_mobile.png')] bg-no-repeat bg-contain bg-center bg-fixed  h-full w-full"></div>
 
           {/* Tablet */}
-          <div className="hidden md:block lg:hidden bg-[url('/images/about/Why.png')] bg-cover bg-center bg-fixed h-full w-full"></div>
+          <div className="hidden md:block lg:hidden bg-[url('/images/Why_Choose_us_tablet.png')] bg-no-repeat bg-contain bg-center bg-fixed h-full w-full"></div>
 
           {/* Desktop */}
           <div className="hidden lg:block bg-[url('/images/about/Why.png')] bg-no-repeat  bg-center bg-contain bg-fixed h-full w-full"></div>
         </div>
       </div>
 
-      <div className="-mx-6">
+      <div className="-mx-10">
         <FeatureSectionWithDividers />
       </div>
     </section>

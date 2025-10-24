@@ -5,7 +5,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="bg-white md:py-20 lg:py-5 px-6 text-white">
+    <section className="bg-white md:py-20 lg:py-20 lg:px-10 md:px-10 px-5 py-15 text-white">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-5 md:mb-5">
@@ -122,7 +122,7 @@ export default function ContactSection() {
                   Phone Number
                 </h4>
               </div>
-              <p className="text-lg text-[#1A1A1A] font-medium mb-5">
+              <p className="text-lg text-[#1A1A1A] font-medium mb-5 ">
                 +(855) 10 957 098
               </p>
             </div>
