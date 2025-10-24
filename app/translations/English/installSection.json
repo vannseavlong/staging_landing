@@ -1,0 +1,22 @@
+{
+  "id": "install",
+  "header": {
+    "subtitle": "",
+    "title": "Download bEasy App Now!",
+    "description": "bEasy is your one-stop solution for improving your home or working conditions in 30 seconds! Reliable, Safe, and Trusted to make your decision worry-free. Download now for continued life improvements!"
+  },
+  "items": [
+    {
+      "key": "appStore",
+      "title": "App Store",
+      "subtitle": "Download on the",
+      "description": ""
+    },
+    {
+      "key": "googlePlay",
+      "title": "Google Play",
+      "subtitle": "Get it on",
+      "description": ""
+    }
+  ]
+}

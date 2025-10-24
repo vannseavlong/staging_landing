@@ -2,8 +2,26 @@
 
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { useTranslate } from "@/app/hooks/useTranslate";
+
+type InstallSectionType = {
+  header?: { title?: string; description?: string };
+  items?: Array<{ key: string; title?: string; subtitle?: string }>;
+};
 
 export default function InstallSection() {
+  const { getSection } = useTranslate();
+  const install = getSection("install") as InstallSectionType;
+
+  const header = install?.header || {};
+  const items = install?.items || [];
+
+  const find = (key: string): { title?: string; subtitle?: string } =>
+    (items.find((i) => i.key === key) as unknown as {
+      title?: string;
+      subtitle?: string;
+    }) || {};
+
   return (
     <section className="bg-white border-t border-gray-200 py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -11,12 +29,10 @@ export default function InstallSection() {
           {/* Left: Title / Description / Buttons */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Get the bEasy App Now!
+              {header.title}
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto lg:mx-0">
-              bEasy is your one-stop solution for improving your home or working
-              conditions in 30second! Reliable, Safe, and Trusted to make your
-              decision worry-free. Download now for continued life improvements!
+              {header.description}
             </p>
 
             <div className="flex justify-center lg:justify-start gap-4">
@@ -33,16 +49,18 @@ export default function InstallSection() {
                   <Image
                     className="w-auto h-10 object-contain"
                     src="/icons/download/apple.svg"
-                    alt="App Store"
+                    alt={find("appStore").title || "App Store"}
                     width={40}
                     height={40}
                     priority
                   />
                   <div className="flex flex-col items-start">
                     <span className="text-xs text-black font-light">
-                      Download on the
+                      {find("appStore").subtitle || "Download on the"}
                     </span>
-                    <span className="text-lg font-semibold">App Store</span>
+                    <span className="text-lg font-semibold">
+                      {find("appStore").title || "App Store"}
+                    </span>
                   </div>
                 </Button>
               </a>
@@ -60,16 +78,18 @@ export default function InstallSection() {
                   <Image
                     className="w-auto h-10 object-contain"
                     src="/icons/download/googlePlay.webp"
-                    alt="Google Play"
+                    alt={find("googlePlay").title || "Google Play"}
                     width={40}
                     height={40}
                     priority
                   />
                   <div className="flex flex-col items-start">
                     <span className="text-xs text-black font-light">
-                      Get it on
+                      {find("googlePlay").subtitle || "Get it on"}
                     </span>
-                    <span className="text-lg font-semibold"> Google Play</span>
+                    <span className="text-lg font-semibold">
+                      {find("googlePlay").title || "Google Play"}
+                    </span>
                   </div>
                 </Button>
               </a>
