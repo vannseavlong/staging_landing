@@ -2,13 +2,29 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
+  const { currentLanguageCode } = useLanguage();
+
+  const withLang = (path: string) => {
+    // append language code as last segment
+    const segments = path.split("/").filter(Boolean);
+    if (segments.length === 0) return `/${currentLanguageCode}`;
+    const last = segments[segments.length - 1];
+    if (["en", "km", "zh"].includes(last)) {
+      segments[segments.length - 1] = currentLanguageCode;
+    } else {
+      segments.push(currentLanguageCode);
+    }
+    return `/${segments.join("/")}`;
+  };
+
   return (
     <header className="w-full bg-white/70 backdrop-blur sticky top-0 z-50 border-b">
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-6 py-3 md:px-8 md:py-4 flex items-center justify-between">
         <Link href="/" className="font-semibold text-lg">
           Beasy
         </Link>
@@ -23,9 +39,16 @@ export default function NavBar() {
           <a href="#faq" className="hover:underline">
             FAQ
           </a>
-          <Link href="/faq" className="hover:underline">
+          <a
+            href={withLang("/faq")}
+            className="hover:underline"
+            onClick={(e) => {
+              // Prevent real navigation to avoid 404s for language-suffixed routes
+              e.preventDefault();
+            }}
+          >
             FAQ Page
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -49,9 +72,15 @@ export default function NavBar() {
             <a href="#faq" onClick={() => setOpen(false)}>
               FAQ
             </a>
-            <Link href="/faq" onClick={() => setOpen(false)}>
+            <a
+              href={withLang("/faq")}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+              }}
+            >
               FAQ Page
-            </Link>
+            </a>
           </div>
         </div>
       )}

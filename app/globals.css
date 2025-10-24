@@ -122,6 +122,25 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.bg-beasy-gradient {
+  background: var(--beasy-gradient);
+}
+
+.text-beasy-gradient {
+  background: var(--beasy-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* hide scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -151,11 +170,34 @@
 }
 
 .swiper-button-prev {
-  left: 10px !important;
+  left: 64px !important;
 }
 
 .swiper-button-next {
-  right: 10px !important;
+  right: 64px !important;
+}
+
+/* Responsive offsets for Swiper navigation buttons
+   - Desktop (default): 64px
+   - Tablet (<=1024px): 32px
+   - Mobile (<=768px): 24px
+*/
+@media (max-width: 1024px) {
+  .swiper-button-prev {
+    left: 32px !important;
+  }
+  .swiper-button-next {
+    right: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev {
+    left: 24px !important;
+  }
+  .swiper-button-next {
+    right: 24px !important;
+  }
 }
 
 .swiper-button-next:after,

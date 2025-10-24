@@ -1,6 +1,13 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export interface Language {
   code: string;
@@ -41,12 +48,36 @@ const AVAILABLE_LANGUAGES: Language[] = [
 ];
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const router = useRouter();
   const [currentLanguageCode, setCurrentLanguageCode] = useState("en");
+
+  // Detect language from URL pathname
+  useEffect(() => {
+    const segments = pathname.split("/").filter(Boolean);
+    const langSegment = segments[0];
+    if (["en", "km", "zh"].includes(langSegment)) {
+      setCurrentLanguageCode(langSegment);
+    }
+  }, [pathname]);
 
   const changeLanguage = (code: string) => {
     setCurrentLanguageCode(code);
-    // TODO: Integrate with your translation system
-    console.log("Language changed to:", code);
+
+    // Replace the language segment in the URL
+    const segments = pathname.split("/").filter(Boolean);
+    const currentLang = segments[0];
+
+    if (["en", "km", "zh"].includes(currentLang)) {
+      // Replace first segment with new language
+      segments[0] = code;
+    } else {
+      // Add language as first segment
+      segments.unshift(code);
+    }
+
+    const newPath = `/${segments.join("/")}`;
+    router.push(newPath);
   };
 
   return (
