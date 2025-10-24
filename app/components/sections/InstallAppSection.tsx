@@ -79,7 +79,7 @@ export default function InstallSection() {
             <div className="block lg:hidden mt-8">
               <div className="w-[220px] sm:w-[260px] mx-auto">
                 <Image
-                  src="/images/hero/Mobile_bCombos_CN.webp"
+                  src="/images/mock-screen.webp"
                   alt="phone mockup"
                   width={300}
                   height={600}
@@ -95,7 +95,7 @@ export default function InstallSection() {
           <div className="order-1 lg:order-2 hidden lg:flex justify-center lg:justify-end">
             <div className="w-[260px] sm:w-[320px] md:w-[380px] lg:w-[420px]">
               <Image
-                src="/images/hero/Mobile_bCombos_CN.webp"
+                src="/images/mock-screen.webp"
                 alt="phone mockup"
                 width={420}
                 height={840}
