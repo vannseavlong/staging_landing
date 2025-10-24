@@ -49,22 +49,24 @@ export default function TestimonialSection() {
 }
 
 function VideoRow() {
+  const { t } = useTranslate();
+
   const items = [
     {
       img: "/images/testimonial/loung_coffee.webp",
-      caption: "Cafe Lounge",
+      caption: t("testimonial.captions.cafeLounge", "Cafe Lounge"),
       videoId: "lTYwpANidX4",
       videoSi: "naY-J-GMJyEpgiFA",
     },
     {
       img: "/images/testimonial/willow_coffee.webp",
-      caption: "Willow Coffee",
+      caption: t("testimonial.captions.willowCoffee", "Willow Coffee"),
       videoId: "1ErTMLL-QrQ",
       videoSi: "UpBmOPN1A6zsG0SM",
     },
     {
       img: "/images/testimonial/pang_coffee.webp",
-      caption: "1987 Pang & Cafe",
+      caption: t("testimonial.captions.pangCafe", "1987 Pang & Cafe"),
       videoId: "a9zqWXhw0R4",
       videoSi: "gIiuPT0g2vPO4TO7",
     },
