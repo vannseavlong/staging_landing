@@ -26,7 +26,7 @@ const Service = () => {
     laundry: "/images/services/laundry.jpg",
     washingMachine: "/images/services/washing.png",
     postRenovation: "/images/services/Post_Reno.png",
-    acCleaning: "/images/services/Ac_cleaning.png",
+    acCleaning: "/images/services/ac.png",
   };
 
   const mediaItems: Array<{
