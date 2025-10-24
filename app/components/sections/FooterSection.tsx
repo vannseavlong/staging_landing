@@ -5,18 +5,18 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
 
 import { useLanguage } from "@/app/contexts/LanguageContext";
-import { useTranslate } from "@/app/hooks/useTranslate";
+// import { useTranslate } from "@/app/hooks/useTranslate";
 
 export default function FooterSection() {
   const { currentLanguageCode } = useLanguage();
-   const { t } = useTranslate(); 
+  //  const { t } = useTranslate();
   const handleSocialClick = (platform: string) => {
     console.log(`${platform} icon clicked`);
   };
 
   return (
     <footer
-      className="text-black border-t font-inter py-20 pb-10 lg:py-20 lg:mt-20 px-10 lg:px-10 md:px-8 relative overflow-hidden bg-white"
+      className="text-black border-t font-[Inter] py-20 pb-10 lg:py-20 lg:mt-20 px-10 lg:px-10 md:px-8 relative overflow-hidden bg-white"
       aria-label="Footer section"
     >
       <div className="grid grid-cols-1 gap-10 lg:gap-30 md:grid-cols-1 lg:grid-cols-2">
@@ -34,12 +34,13 @@ export default function FooterSection() {
           </div>
 
           <p className="text-[16px] text-[#1A1A1A] opacity-80 font-medium leading-relaxed max-w-md">
-            #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia.
+            #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom
+            Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom
+            Penh, Cambodia.
           </p>
 
-  <h3 className="text-sm font-medium text-bllack mt-4 ">Find us on</h3>
+          <h3 className="text-sm font-medium text-bllack mt-4 ">Find us on</h3>
           <div className="flex flex-row md:flex-row justify-start items-center gap-6">
-
             <div className="flex space-x-6 ">
               <a
                 href="https://t.me/bEasy_kh"
@@ -198,29 +199,24 @@ export default function FooterSection() {
           © {new Date().getFullYear()} Suntel Technology. All rights reserved.
         </p>
 
-
-
-         <div className="flex flex-wrap justify-center sm:justify-end gap-4 ">
-            <Link
-             href={`/${currentLanguageCode}/term-of-condition`}
-              className=" hover:underline text-sm transition-colors "
-              aria-label="Terms of Service"
-            >
-              Terms of Service
-            </Link>
-            <span className=" text-black">•</span>
-            <Link
-               href={`/${currentLanguageCode}/privacy-policy`}
-              className=" hover:underline text-sm  transition-colors "
-              aria-label="Privacy Policy"
-            >
-              Privacy Policy
-            </Link>
-          </div>
-
+        <div className="flex flex-wrap justify-center sm:justify-end gap-4 ">
+          <Link
+            href={`/${currentLanguageCode}/term-of-condition`}
+            className=" hover:underline text-sm transition-colors "
+            aria-label="Terms of Service"
+          >
+            Terms of Service
+          </Link>
+          <span className=" text-black">•</span>
+          <Link
+            href={`/${currentLanguageCode}/privacy-policy`}
+            className=" hover:underline text-sm  transition-colors "
+            aria-label="Privacy Policy"
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
 }
-
-
