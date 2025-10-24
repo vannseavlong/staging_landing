@@ -1,0 +1,22 @@
+{
+  "id": "install",
+  "header": {
+    "subtitle": "",
+    "title": "ទាញយកកម្មវិធី bEasy ឥឡូវនេះ!",
+    "description": "bEasy ជាដំណោះស្រាយមួយដើម្បីធ្វើឲ្យផ្ទះ និងកន្លែងធ្វើការរបស់អ្នកកាន់តែប្រសើរ — អាចកក់ក្នុងរយៈពេល 30 វិនាទី! មានសុវត្ថិភាព និងអាចទុកចិត្តបាន។ ទាញយកឥឡូវនេះដើម្បីពង្រឹងជីវិតប្រចាំថ្ងៃ។"
+  },
+  "items": [
+    {
+      "key": "appStore",
+      "title": "App Store",
+      "subtitle": "",
+      "description": ""
+    },
+    {
+      "key": "googlePlay",
+      "title": "Google Play",
+      "subtitle": "",
+      "description": ""
+    }
+  ]
+}

@@ -32,6 +32,18 @@ import testimonialZh from "@/app/translations/Chinese/testimonial.json";
 import serviceEn from "@/app/translations/English/serviceSection.json";
 import serviceKm from "@/app/translations/Khmer/serviceSection.json";
 import serviceZh from "@/app/translations/Chinese/serviceSection.json";
+import aboutEn from "@/app/translations/English/aboutSection.json";
+import aboutKm from "@/app/translations/Khmer/aboutSection.json";
+import aboutZh from "@/app/translations/Chinese/aboutSection.json";
+import contactEn from "@/app/translations/English/contactSection.json";
+import contactKm from "@/app/translations/Khmer/contactSection.json";
+import contactZh from "@/app/translations/Chinese/contactSection.json";
+import installEn from "@/app/translations/English/installSection.json";
+import installKm from "@/app/translations/Khmer/installSection.json";
+import installZh from "@/app/translations/Chinese/installSection.json";
+import footerEn from "@/app/translations/English/footerSection.json";
+import footerKm from "@/app/translations/Khmer/footerSection.json";
+import footerZh from "@/app/translations/Chinese/footerSection.json";
 
 const translations: Record<string, Record<string, TranslationObject>> = {
   English: {
@@ -42,6 +54,10 @@ const translations: Record<string, Record<string, TranslationObject>> = {
     // we want the inner object so keys like 'testimonial.subtitle' map to the inner properties
     testimonial: testimonialEn?.testimonial || {},
     service: serviceEn || {},
+    about: aboutEn || {},
+    contact: (contactEn as unknown as TranslationObject) || {},
+    install: (installEn as unknown as TranslationObject) || {},
+    footer: (footerEn as unknown as TranslationObject) || {},
   },
   Khmer: {
     navbar: navbarKm,
@@ -49,6 +65,10 @@ const translations: Record<string, Record<string, TranslationObject>> = {
     faqSection: faqKm,
     testimonial: testimonialKm?.testimonial || {},
     service: serviceKm || {},
+    about: aboutKm || {},
+    contact: (contactKm as unknown as TranslationObject) || {},
+    install: (installKm as unknown as TranslationObject) || {},
+    footer: (footerKm as unknown as TranslationObject) || {},
   },
   Chinese: {
     navbar: navbarZh,
@@ -56,6 +76,10 @@ const translations: Record<string, Record<string, TranslationObject>> = {
     faqSection: faqZh,
     testimonial: testimonialZh?.testimonial || {},
     service: serviceZh || {},
+    about: aboutZh || {},
+    contact: (contactZh as unknown as TranslationObject) || {},
+    install: (installZh as unknown as TranslationObject) || {},
+    footer: (footerZh as unknown as TranslationObject) || {},
   },
 };
 

@@ -5,11 +5,25 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
 
 import { useLanguage } from "@/app/contexts/LanguageContext";
-// import { useTranslate } from "@/app/hooks/useTranslate";
+import { useTranslate } from "@/app/hooks/useTranslate";
 
 export default function FooterSection() {
   const { currentLanguageCode } = useLanguage();
-  //  const { t } = useTranslate();
+  const { getSection, ti } = useTranslate();
+
+  const footer = getSection("footer") as {
+    header?: { description?: string };
+    links?: {
+      company?: Array<{ key: string; title: string; href?: string }>;
+      services?: Array<{ key: string; title: string }>;
+    };
+    social?: string;
+    companyTitle?: string;
+    servicesTitle?: string;
+  };
+  const header = footer?.header || {};
+  const links = footer?.links || {};
+  const socialLabel = footer?.social || "Find us on";
   const handleSocialClick = (platform: string) => {
     console.log(`${platform} icon clicked`);
   };
@@ -34,12 +48,12 @@ export default function FooterSection() {
           </div>
 
           <p className="text-[16px] text-[#1A1A1A] opacity-80 font-medium leading-relaxed max-w-md">
-            #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom
-            Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom
-            Penh, Cambodia.
+            {header.description}
           </p>
 
-          <h3 className="text-sm font-medium text-bllack mt-4 ">Find us on</h3>
+          <h3 className="text-sm font-medium text-bllack mt-4 ">
+            {socialLabel}
+          </h3>
           <div className="flex flex-row md:flex-row justify-start items-center gap-6">
             <div className="flex space-x-6 ">
               <a
@@ -86,7 +100,7 @@ export default function FooterSection() {
               {/* Company */}
               <div>
                 <h4 className="text-lg text-black font-bold  tracking-wide mb-4">
-                  Company
+                  {footer.companyTitle || "Company"}
                 </h4>
                 <ul className="text-base font-medium text-black space-y-4">
                   <li>
@@ -94,7 +108,9 @@ export default function FooterSection() {
                       href={`/${currentLanguageCode}/term-of-condition`}
                       className="hover:underline text-sm transition-colors"
                     >
-                      Terms & Conditions
+                      {links.company && links.company[0]?.title
+                        ? links.company[0].title
+                        : "Terms & Conditions"}
                     </Link>
                   </li>
                   <li>
@@ -102,7 +118,9 @@ export default function FooterSection() {
                       href={`/${currentLanguageCode}/privacy-policy`}
                       className="hover:underline text-sm transition-colors"
                     >
-                      Privacy Policy
+                      {links.company && links.company[1]?.title
+                        ? links.company[1].title
+                        : "Privacy Policy"}
                     </Link>
                   </li>
                 </ul>
@@ -111,81 +129,21 @@ export default function FooterSection() {
               {/* Services */}
               <div className="gap-10 space-y-4">
                 <h4 className="text-lg text-black font-bold  tracking-wide mb-4">
-                  Services
+                  {footer.servicesTitle || "Services"}
                 </h4>
                 <ul className="text-base font-medium text-black space-y-4 hover:text-beasy-gradient">
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      General Cleaning
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Deep Cleaning
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Office Cleaning
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Upholstery
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Pest Control
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      AC Cleaning
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Post Renovation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Laundry
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#service"
-                      className="hover:underline text-sm  transition-colors"
-                    >
-                      Washing Machine
-                    </Link>
-                  </li>
+                  {(links.services || []).map(
+                    (s: { key: string; title: string }) => (
+                      <li key={s.key}>
+                        <Link
+                          href="#service"
+                          className="hover:underline text-sm  transition-colors"
+                        >
+                          {s.title}
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -195,9 +153,7 @@ export default function FooterSection() {
 
       {/* Bottom Bar */}
       <div className=" border-t mt-16 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-[#1A1A1A] font-medium space-y-4 sm:space-y-0">
-        <p>
-          © {new Date().getFullYear()} Suntel Technology. All rights reserved.
-        </p>
+        <p>{ti("footer.bottomText", { year: new Date().getFullYear() })}</p>
 
         <div className="flex flex-wrap justify-center sm:justify-end gap-4 ">
           <Link
@@ -205,7 +161,9 @@ export default function FooterSection() {
             className=" hover:underline text-sm transition-colors "
             aria-label="Terms of Service"
           >
-            Terms of Service
+            {links.company && links.company[0]?.title
+              ? links.company[0].title
+              : "Terms of Service"}
           </Link>
           <span className=" text-black">•</span>
           <Link
@@ -213,7 +171,9 @@ export default function FooterSection() {
             className=" hover:underline text-sm  transition-colors "
             aria-label="Privacy Policy"
           >
-            Privacy Policy
+            {links.company && links.company[1]?.title
+              ? links.company[1].title
+              : "Privacy Policy"}
           </Link>
         </div>
       </div>

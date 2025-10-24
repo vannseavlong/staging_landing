@@ -1,19 +1,41 @@
 {
   "id": "footer",
-  "findUsOn": "ស្វែងរកយើងនៅលើ",
-  "location": "#FO-2312-13-14, ជាន់ទី 23, អគារ Flatiron, ផ្លូវ 102, មជ្ឈមណ្ឌលទីក្រុងភ្នំពេញ, ភូមិ 1, សង្កាត់ស្រះចក, ខណ្ឌដូនពេញ, រាជធានីភ្នំពេញ, ប្រទេសកម្ពុជា។",
-  "service": {
-    "id": "footer_service",
-    "service": "សេវាកម្ម",
-    "generalCleaning": "សម្អាតទូទៅ",
-    "deepCleaning": "សម្អាតស៊ីជម្រៅ",
-    "officeCleaning": "សម្អាតការិយាល័យ",
-    "upholstery": "សម្អាតគ្រឿងសង្ហារិម (ពូក/សាឡុង)",
-    "Pest Control": "ការកម្ចាត់សត្វល្អិត",
-    "acCleaning": "សម្អាតម៉ាស៊ីនត្រជាក់",
-    "postRenovation": "សម្អាតក្រោយជួសជុល",
-    "Laundry": "បោកគក់",
-    "washingMachine": "សម្អាតម៉ាស៊ីនបោកគក់"
+  "header": {
+    "subtitle": "",
+    "title": "",
+    "description": "#FO-2312-13-14, ជាន់ទី 23, អគារ Flatiron, ផ្លូវ 102, មជ្ឈមណ្ឌលទីក្រុងភ្នំពេញ, ភូមិ 1, សង្កាត់ស្រះចក, ខណ្ឌដូនពេញ, រាជធានីភ្នំពេញ, កម្ពុជា។"
   },
-  "company": "ក្រុមហ៊ុន"
+  "links": {
+    "company": [
+      {
+        "key": "terms",
+        "title": "Terms & Conditions",
+        "href": "/{lang}/term-of-condition"
+      },
+      {
+        "key": "privacy",
+        "title": "Privacy Policy",
+        "href": "/{lang}/privacy-policy"
+      }
+    ],
+    "services": [
+      { "key": "generalCleaning", "title": "សំអាតទូទៅ" },
+      { "key": "deepCleaning", "title": "សំអាតស៊ីជម្រៅ" },
+      { "key": "officeCleaning", "title": "សំអាតការិយាល័យ" },
+      { "key": "upholstery", "title": "សំអាតគ្រឿងសង្ហារឹមក្រណាត់" },
+      { "key": "pestControl", "title": "កម្ចាត់សត្វល្អិត" },
+      { "key": "acCleaning", "title": "សំអាតម៉ាស៊ីនត្រជាក់" },
+      { "key": "postRenovation", "title": "សំអាតក្រោយជួសជុល" },
+      { "key": "laundry", "title": "សេវាបោកអ៊ុត" },
+      { "key": "washingMachine", "title": "សំអាតម៉ាស៊ីនបោក" }
+    ]
+  },
+  "social": "ស្វែងរកយើងនៅលើ",
+  "bottomText": "© {{year}} Suntel Technology. All rights reserved.",
+  "bottomLinks": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "companyTitle": "ក្រុមហ៊ុន",
+  "servicesTitle": "សេវាកម្ម"
 }

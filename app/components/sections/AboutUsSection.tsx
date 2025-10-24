@@ -2,68 +2,39 @@
 
 import { FC } from "react";
 import Image from "next/image";
+import { useTranslate } from "@/app/hooks/useTranslate";
 
-// ✅ Feature section data and component
-const features = [
-  {
-    icon: (
-      <Image
-        src="/images/about/Quick_Booking.png"
-        alt="Quick Booking Icon"
-        width={44}
-        height={44}
-        className="w-[44px] h-[44px]"
-      />
-    ),
-    title: "Quick Booking",
-    description:
-      "Book your cleaning in just a few taps – simple, fast, and hassle-free.",
-  },
-  {
-    icon: (
-      <Image
-        src="/images/about/Flexible_Schedule.png"
-        alt="Flexible Schedule Icon"
-        width={44}
-        height={44}
-        className="w-[44px] h-[44px]"
-      />
-    ),
-    title: "Flexible Service",
-    description:
-      "Plan change? No problem. Easily reschedule or adjust your booking anytime.",
-  },
-  {
-    icon: (
-      <Image
-        src="/images/about/Sefty.png"
-        alt="Sefty Icon"
-        width={44}
-        height={44}
-        className="w-[44px] h-[44px]"
-      />
-    ),
-    title: "Safety First",
-    description:
-      "Your home’s security matters. Every cleaner is fully vetted and trained for your peace of mind.",
-  },
-  {
-    icon: (
-      <Image
-        src="/images/about/Professional_Cleaner.png"
-        alt="Professional Cleaner Icon"
-        width={44}
-        height={44}
-        className="w-[44px] h-[44px]"
-      />
-    ),
-    title: "Professional Team",
-    description:
-      "Our cleaners are properly trained and committed to providing high-quality service.",
-  },
-];
-
+// Build feature items from translations and map icons by key
 const FeatureSectionWithDividers: FC = () => {
+  const { getSection } = useTranslate();
+  const aboutSection = getSection("about") as {
+    header?: { subtitle?: string; title?: string; description?: string };
+    items?: Array<{ key: string; title?: string; description?: string }>;
+  };
+
+  const imageMap: Record<string, string> = {
+    quickBooking: "/images/about/Quick_Booking.png",
+    flexibleSchedule: "/images/about/Flexible_Schedule.png",
+    safetyFirst: "/images/about/Sefty.png",
+    professionalTeam: "/images/about/Professional_Cleaner.png",
+  };
+
+  const features = (
+    Array.isArray(aboutSection.items) ? aboutSection.items : []
+  ).map((it) => ({
+    icon: (
+      <Image
+        src={imageMap[it.key] || "/images/about/Quick_Booking.png"}
+        alt={it.title || ""}
+        width={44}
+        height={44}
+        className="w-[44px] h-[44px]"
+      />
+    ),
+    title: it.title || "",
+    description: it.description || "",
+  }));
+
   return (
     <section className="bg-white pb-5">
       <div className="max-w-8xl mx-auto">
@@ -116,13 +87,19 @@ const FeatureSectionWithDividers: FC = () => {
 
 // ✅ Main section (Para)
 const Para = () => {
+  const { getSection } = useTranslate();
+  const aboutSection = getSection("about") as {
+    header?: { subtitle?: string; title?: string; description?: string };
+    items?: Array<{ key: string; title?: string; description?: string }>;
+  };
+
   return (
     <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-inter">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">
           <h5 className="font-inter text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
-            WHY CHOOSE US
+            {aboutSection.header?.subtitle}
           </h5>
         </div>
       </div>
@@ -130,20 +107,18 @@ const Para = () => {
       {/* Heading + Description */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 md:gap-10 text-left">
         <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-inter tracking-widest leading-snug">
-          Don’t Worry, bEasy Has You Covered
+          {aboutSection.header?.title}
         </h1>
         <div className="flex justify-start w-full mb-10 md:justify-start lg:justify-end lg:w-[60%] lg:py-5">
           <p className="text-[#3D3D3D] font-normal font-inter text-base  leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
-            Our on-demand cleaners are professionally trained,
-            background-checked, and committed to delivering spotless results
-            every time.
+            {aboutSection.header?.description}
           </p>
         </div>
       </div>
 
       {/* Parallax Image Section */}
 
-      <div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden -mx-10">
+      <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}

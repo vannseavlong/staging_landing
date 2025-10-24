@@ -2,15 +2,33 @@
 
 import Image from "next/image";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { useTranslate } from "@/app/hooks/useTranslate";
+
+type Section = {
+  header?: { subtitle?: string; title?: string; description?: string };
+  items?: Array<{ key: string; title?: string; description?: string }>;
+};
 
 export default function ContactSection() {
+  const { getSection } = useTranslate();
+  const contact = getSection("contact") as Section;
+
+  const header = contact?.header || {};
+  const items = contact?.items || [];
+
+  const find = (key: string): { title?: string; description?: string } =>
+    (items.find((i) => i.key === key) as unknown as {
+      title?: string;
+      description?: string;
+    }) || {};
+
   return (
     <section className="bg-white md:py-20 lg:py-20 lg:px-10 md:px-10 px-5 py-15 text-white">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-5 md:mb-5">
           <h5 className="font-inter text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
-            CONTACT US
+            {header.subtitle}
           </h5>
         </div>
       </div>
@@ -18,12 +36,11 @@ export default function ContactSection() {
       {/* Heading + Description */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 md:gap-10 text-left">
         <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-inter tracking-widest leading-snug">
-          Get in Touch with Our Team
+          {header.title}
         </h1>
         <div className="flex justify-start w-full mb-13 md:justify-items-start lg:justify-end lg:w-[60%] lg:py-0">
           <p className="text-[#3D3D3D] font-inter text-lg font-normal leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
-            Have questions or need support? Reach out to our team - we’ll get
-            back to you as soon as possible.
+            {header.description}
           </p>
         </div>
       </div>
@@ -91,13 +108,11 @@ export default function ContactSection() {
               <div className="flex flex-row gap-2">
                 <MapPin className="mb-1 text-[#3D3D3D]" />
                 <h4 className="text-base text-[#3D3D3D] font-medium mb-4 tracking-wider">
-                  Location
+                  {find("location").title}
                 </h4>
               </div>
               <p className="lg:text-lg text-[18px] text-[#1A1A1A] font-medium lg:w-[500px] ">
-                #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom
-                Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh,
-                Phnom Penh, Cambodia.
+                {find("location").description}
               </p>
             </div>
 
@@ -106,11 +121,11 @@ export default function ContactSection() {
               <div className="flex flex-row gap-2">
                 <Mail className="mb-1 text-[#3D3D3D]" />
                 <h4 className="text-base  text-[#3D3D3D] font-medium mb-4 tracking-wider">
-                  Email
+                  {find("email").title}
                 </h4>
               </div>
               <p className="text-lg  text-[#1A1A1A] font-medium">
-                support@beasy.info
+                {find("email").description}
               </p>
             </div>
 
@@ -119,11 +134,11 @@ export default function ContactSection() {
               <div className="flex flex-row gap-2">
                 <Phone className="mb-1 text-[#3D3D3D]" />
                 <h4 className="text-base text-[#3D3D3D] font-medium mb-4 tracking-wider">
-                  Phone Number
+                  {find("phone").title}
                 </h4>
               </div>
               <p className="text-lg text-[#1A1A1A] font-medium mb-5 ">
-                +(855) 10 957 098
+                {find("phone").description}
               </p>
             </div>
           </div>
