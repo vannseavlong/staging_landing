@@ -70,11 +70,11 @@ const FeatureSectionWithDividers: FC = () => {
         <div className="hidden md:hidden lg:flex divide-x divide-gray-200 border-t border-b border-r border-l">
           {features.map((item, i) => (
             <div key={i} className="flex-1 p-8 text-center">
-              <div className="flex lg:justify-center mb-4">{item.icon}</div>
-              <h3 className="text-[20px] font-inter font-bold text-[#1A1A1A] mb-2">
+              <div className="flex lg:justify-center mb-5">{item.icon}</div>
+              <h3 className="text-[20px] font-[Inter] font-bold text-[#1A1A1A] mb-5">
                 {item.title}
               </h3>
-              <p className="text-[#3D3D3D] font-inter text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
+              <p className="text-[#3D3D3D] font-[Inter] text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
                 {item.description}
               </p>
             </div>
@@ -88,9 +88,10 @@ const FeatureSectionWithDividers: FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm justify-center leading-relaxed">
-                {item.description}
-              </p>
+             <p className="text-gray-600 w-[250px] mx-auto text-sm text-center leading-relaxed">
+  {item.description}
+</p>
+
             </div>
           ))}
         </div>
@@ -117,11 +118,11 @@ const FeatureSectionWithDividers: FC = () => {
 // ✅ Main section (Para)
 const Para = () => {
   return (
-    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-inter">
+    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-[Inter]">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">
-          <h5 className="font-inter text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
+          <h5 className="font-[Inter] text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
             WHY CHOOSE US
           </h5>
         </div>
@@ -129,11 +130,11 @@ const Para = () => {
 
       {/* Heading + Description */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 md:gap-10 text-left">
-        <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-inter tracking-widest leading-snug">
+        <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-[Inter] tracking-widest leading-snug">
           Don’t Worry, bEasy Has You Covered
         </h1>
         <div className="flex justify-start w-full mb-10 md:justify-start lg:justify-end lg:w-[60%] lg:py-5">
-          <p className="text-[#3D3D3D] font-normal font-inter text-base  leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
+          <p className="text-[#3D3D3D] font-normal font-[Inter] text-base  leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
             Our on-demand cleaners are professionally trained,
             background-checked, and committed to delivering spotless results
             every time.
@@ -147,7 +148,7 @@ const Para = () => {
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}
-          <div className="block md:hidden bg-[url('/images/Why_Choose_us_Draft_mobile.png')] bg-no-repeat bg-contain bg-center bg-fixed  h-full w-full"></div>
+          <div className="block md:hidden bg-[url('/images/Why_Choose_us_Draft_mobile.png')] bg-no-repeat bg-contain bg-center   h-full w-full"></div>
 
           {/* Tablet */}
           <div className="hidden md:block lg:hidden bg-[url('/images/Why_Choose_us_tablet.png')] bg-no-repeat bg-contain bg-center bg-fixed h-full w-full"></div>
