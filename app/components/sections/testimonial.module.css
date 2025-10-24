@@ -1,0 +1,38 @@
+.marquee {
+  /* ensure overflow hidden and create a horizontal stacking context */
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: scroll 22s linear infinite;
+}
+
+.track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive sizes for cards */
+@media (min-width: 768px) {
+  .track {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .track {
+    gap: 3rem;
+  }
+}
