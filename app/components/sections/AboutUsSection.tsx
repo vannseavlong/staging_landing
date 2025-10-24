@@ -117,8 +117,8 @@ const Para = () => {
       </div>
 
       {/* Parallax Image Section */}
-
       <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
+
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}
