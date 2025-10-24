@@ -5,9 +5,11 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
 
 import { useLanguage } from "@/app/contexts/LanguageContext";
+import { useTranslate } from "@/app/hooks/useTranslate";
 
 export default function FooterSection() {
   const { currentLanguageCode } = useLanguage();
+   const { t } = useTranslate(); 
   const handleSocialClick = (platform: string) => {
     console.log(`${platform} icon clicked`);
   };
@@ -32,9 +34,7 @@ export default function FooterSection() {
           </div>
 
           <p className="text-[16px] text-[#1A1A1A] opacity-80 font-medium leading-relaxed max-w-md">
-            #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom
-            Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom
-            Penh, Cambodia.
+            #FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia.
           </p>
 
   <h3 className="text-sm font-medium text-bllack mt-4 ">Find us on</h3>
@@ -222,3 +222,5 @@ export default function FooterSection() {
     </footer>
   );
 }
+
+

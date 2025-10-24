@@ -71,10 +71,10 @@ const FeatureSectionWithDividers: FC = () => {
           {features.map((item, i) => (
             <div key={i} className="flex-1 p-8 text-center">
               <div className="flex lg:justify-center mb-4">{item.icon}</div>
-              <h3 className="text-[20px] font-bold text-[#1A1A1A] mb-2">
+              <h3 className="text-[20px] font-inter font-bold text-[#1A1A1A] mb-2">
                 {item.title}
               </h3>
-              <p className="text-[#3D3D3D] text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
+              <p className="text-[#3D3D3D] font-inter text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
                 {item.description}
               </p>
             </div>
@@ -117,7 +117,7 @@ const FeatureSectionWithDividers: FC = () => {
 // ✅ Main section (Para)
 const Para = () => {
   return (
-    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white">
+    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-inter">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">

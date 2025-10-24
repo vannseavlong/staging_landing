@@ -85,7 +85,7 @@ const Service = () => {
     <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white">
       {/* Header */}
       <div className="mb-5 mt-10">
-        <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">
+        <div className="flex items-center text-beasy-gradient mb-5 lg:mb-0 md:mb-5">
           <h5 className="font-inter text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
             Our Services
           </h5>
