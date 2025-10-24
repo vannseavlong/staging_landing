@@ -1,15 +1,15 @@
 {
   "id": "contact",
   "header": {
-    "subtitle": "CONTACT US",
-    "title": "Get in Touch with Our Team",
-    "description": "Have questions or need support? Reach out to our team - we’ll get back to you as soon as possible."
+    "subtitle": "联系我们",
+    "title": "与我们的团队取得联系",
+    "description": "有问题或需要支持吗？请联系我们的团队——我们会尽快给您回复。"
   },
   "items": [
     {
       "key": "location",
       "title": "Location",
-      "description": "#FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia."
+      "description": "#C17,  Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia."
     },
     {
       "key": "email",
