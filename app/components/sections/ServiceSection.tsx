@@ -43,25 +43,28 @@ const Service = () => {
       image: "/images/services/laundry.jpg",
       title: "Laundry",
       description:
-        "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
+        "Enjoy on-demand laundry in Phnom Penh with pickup and delivery via our app. We wash, dry, and fold to keep your clothes fresh and clean.",
     },
-    {
-      image: "/images/services/laundry.jpg",
-      title: "AC Cleaning",
-      description:
-        "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
-    },
-    {
-      image: "/images/services/laundry.jpg",
-      title: "Post Renovation",
-      description:
-        "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
-    },
+
     {
       image: "/images/services/washing.png",
       title: "Washing Machine",
       description:
         "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
+    },
+    
+    {
+      image: "/images/services/laundry.jpg",
+      title: "Post Renovation",
+      description:
+        "Just renovated? Book a post-renovation cleaning in Phnom Penh through our app. We clear dust, paint, and debris to make your space move-in ready.",
+    },
+    
+    {
+      image: "/images/services/laundry.jpg",
+      title: "AC Cleaning",
+      description:
+        "Stay cool and energy-efficient with our AC cleaning service in Phnom Penh. Get cleaner air, faster cooling, and lower bills—on-demand through our app.",
     },
   ];
 
@@ -79,7 +82,7 @@ const Service = () => {
   };
 
   return (
-    <section className="bg-white md:py-20 lg:py-5 px-6 text-white">
+    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">

@@ -1,0 +1,21 @@
+{
+  "id": "footer",
+  
+    "findUsOn": "在以下平台找到我们",
+
+  "location": "#FO-2312-13-14, Floor 23rd, Flatiron Building, Street 102, Phnom Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia.",
+  "service": {
+    "id": "footer_service",
+    "service": "服务",
+    "generalCleaning": "一般清洁",
+    "deepCleaning": "深度清洁",
+    "officeCleaning": "办公室清洁",
+    "upholstery": "软装清洁",
+    "Pest Control": "虫害控制",
+    "acCleaning": "空调清洗",
+    "postRenovation": "装修后清洁",
+    "Laundry": "洗衣服务",
+    "washingMachine": "洗衣机清洗"
+  },
+  "company": "公司"
+}
