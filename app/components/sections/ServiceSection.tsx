@@ -70,7 +70,7 @@ const Service = () => {
         <h1 className="w-full lg:w-[500px] md:w-[400px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-inter tracking-widest leading-snug">
           {serviceSection.header?.title}
         </h1>
-
+        
         {/* Scroll buttons */}
         <div className="hidden md:flex gap-5 items-end justify-end mt-5">
           <button
