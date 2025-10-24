@@ -1,12 +1,25 @@
 {
-    "id": "contact",
-    "locationName": "#FO-2312-13-14, Floor 23th, Flatiron Building, Street 102, Phnom Penh City Center, Phum 1, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia.",
-    "location": "Location",
-    "eamil": "Email",
-    "emailName": "support@beasy.info",
-    "phoneNumber": "Phone Number",
-    "phoneNumberName": "+(855) 10 957 098",
-    "smallTittle": "CONNTACT US",
-    "bigTittle": "Get in Touch with Our Team",
+  "id": "contact",
+  "header": {
+    "subtitle": "CONTACT US",
+    "title": "Get in Touch with Our Team",
     "description": "Have questions or need support? Reach out to our team - we’ll get back to you as soon as possible."
+  },
+  "items": [
+    {
+      "key": "location",
+      "title": "Location",
+      "description": "#C17,  Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, Cambodia."
+    },
+    {
+      "key": "email",
+      "title": "Email",
+      "description": "support@beasy.info"
+    },
+    {
+      "key": "phone",
+      "title": "Phone Number",
+      "description": "+(855) 10 957 098"
+    }
+  ]
 }

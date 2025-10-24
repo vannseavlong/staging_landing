@@ -1,0 +1,30 @@
+{
+  "id": "about",
+  "header": {
+    "subtitle": "为什么选择我们",
+    "title": "别担心，bEasy 为您护航",
+    "description": "我们的按需清洁人员经过专业培训、背景审查，并致力于每次都提供无可挑剔的服务。"
+  },
+  "items": [
+    {
+      "key": "quickBooking",
+      "title": "快速预订",
+      "description": "只需几步即可预订清洁服务——简单、快速、无忧。"
+    },
+    {
+      "key": "flexibleSchedule",
+      "title": "灵活调度",
+      "description": "计划有变？没问题。随时轻松重新安排或调整您的预订。"
+    },
+    {
+      "key": "safetyFirst",
+      "title": "安全优先",
+      "description": "您的家庭安全很重要。每位清洁人员都经过背景审查和专业培训，保障您的安心。"
+    },
+    {
+      "key": "professionalTeam",
+      "title": "专业团队",
+      "description": "我们的清洁人员经过专业培训，致力于提供高质量的服务。"
+    }
+  ]
+}
