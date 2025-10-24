@@ -29,6 +29,9 @@ import faqZh from "@/app/translations/Chinese/faqSection.json";
 import testimonialEn from "@/app/translations/English/testimonial.json";
 import testimonialKm from "@/app/translations/Khmer/testimonial.json";
 import testimonialZh from "@/app/translations/Chinese/testimonial.json";
+import serviceEn from "@/app/translations/English/serviceSection.json";
+import serviceKm from "@/app/translations/Khmer/serviceSection.json";
+import serviceZh from "@/app/translations/Chinese/serviceSection.json";
 
 const translations: Record<string, Record<string, TranslationObject>> = {
   English: {
@@ -38,18 +41,21 @@ const translations: Record<string, Record<string, TranslationObject>> = {
     // testimonial.json has shape { id: 'Testimonials', testimonial: { ... } }
     // we want the inner object so keys like 'testimonial.subtitle' map to the inner properties
     testimonial: testimonialEn?.testimonial || {},
+    service: serviceEn || {},
   },
   Khmer: {
     navbar: navbarKm,
     sectionA: sectionAKm,
     faqSection: faqKm,
     testimonial: testimonialKm?.testimonial || {},
+    service: serviceKm || {},
   },
   Chinese: {
     navbar: navbarZh,
     sectionA: sectionAZh,
     faqSection: faqZh,
     testimonial: testimonialZh?.testimonial || {},
+    service: serviceZh || {},
   },
 };
 

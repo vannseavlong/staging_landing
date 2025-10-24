@@ -2,71 +2,44 @@
 
 import { useRef } from "react";
 import ServiceCard from "../../components/common/service-card";
+import { useTranslate } from "@/app/hooks/useTranslate";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const Service = () => {
   // unused state removed
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { getSection } = useTranslate();
 
-  const mediaItems = [
-    {
-      image: "/images/services/general.jpg",
-      title: "General Cleaning",
-      description:
-        "Come home to a fresh space with bEasy - we handle the mess so you can enjoy what matters most",
-    },
-    {
-      image: "/images/services/deep.jpg",
-      title: "Deep Cleaning",
-      description:
-        "Get a fresh start with bEasy’s deep cleaning — we tackle hidden dirt and grime to restore your space to its best.",
-    },
-    {
-      image: "/images/services/office.jpg",
-      title: "Office Cleaning",
-      description:
-        "Brighten your workplace with bEasy’s office cleaning — return to a fresh space where everyone can focus and do their best.",
-    },
-    {
-      image: "/images/services/uphol.jpg",
-      title: "Upholstery",
-      description:
-        "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
-    },
-    {
-      image: "/images/services/pest.png",
-      title: "Pest Control",
-      description:
-        "Say goodbye to mosquitoes with our safe, powerful spray and fogging — protecting you and your loved ones from dengue and other viruses.",
-    },
-    {
-      image: "/images/services/laundry.jpg",
-      title: "Laundry",
-      description:
-        "Enjoy on-demand laundry in Phnom Penh with pickup and delivery via our app. We wash, dry, and fold to keep your clothes fresh and clean.",
-    },
+  // Load structured service section from translations (header + items)
+  const serviceSection = getSection("service") as {
+    header?: { subtitle?: string; title?: string; description?: string };
+    items?: Array<{ key: string; title?: string; description?: string }>;
+  };
 
-    {
-      image: "/images/services/washing.png",
-      title: "Washing Machine",
-      description:
-        "Renew your furniture with bEasy’s upholstery cleaning — we remove stains, dust, and allergens for a fresher home.",
-    },
-    
-    {
-      image: "/images/services/laundry.jpg",
-      title: "Post Renovation",
-      description:
-        "Just renovated? Book a post-renovation cleaning in Phnom Penh through our app. We clear dust, paint, and debris to make your space move-in ready.",
-    },
-    
-    {
-      image: "/images/services/laundry.jpg",
-      title: "AC Cleaning",
-      description:
-        "Stay cool and energy-efficient with our AC cleaning service in Phnom Penh. Get cleaner air, faster cooling, and lower bills—on-demand through our app.",
-    },
-  ];
+  // Map of images keyed by the item keys defined in translations
+  const imageMap: Record<string, string> = {
+    generalCleaning: "/images/services/general.jpg",
+    deepCleaning: "/images/services/deep.jpg",
+    officeCleaning: "/images/services/office.jpg",
+    upholstery: "/images/services/uphol.jpg",
+    pestControl: "/images/services/pest.png",
+    laundry: "/images/services/laundry.jpg",
+    washingMachine: "/images/services/washing.png",
+    postRenovation: "/images/services/laundry.jpg",
+    acCleaning: "/images/services/laundry.jpg",
+  };
+
+  const mediaItems: Array<{
+    image: string;
+    title: string;
+    description: string;
+  }> = (Array.isArray(serviceSection.items) ? serviceSection.items : []).map(
+    (it) => ({
+      image: imageMap[it.key] || "/images/services/general.jpg",
+      title: it.title || "",
+      description: it.description || "",
+    })
+  );
 
   // Scroll functions
   const scrollLeft = () => {
@@ -87,7 +60,7 @@ const Service = () => {
       <div className="mb-5 mt-10">
         <div className="flex items-center text-beasy-gradient mb-5 lg:mb-0 md:mb-5">
           <h5 className="font-inter text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
-            Our Services
+            {serviceSection.header?.subtitle}
           </h5>
         </div>
       </div>
@@ -95,7 +68,7 @@ const Service = () => {
       {/* Heading + Navigation */}
       <div className="flex flex-col lg:flex-row md:flex-row justify-between items-start gap-8 lg:gap-12 md:gap-10 text-left">
         <h1 className="w-full lg:w-[500px] md:w-[400px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-inter tracking-widest leading-snug">
-          Every Homecare Service You Need, All in One Place
+          {serviceSection.header?.title}
         </h1>
 
         {/* Scroll buttons */}
