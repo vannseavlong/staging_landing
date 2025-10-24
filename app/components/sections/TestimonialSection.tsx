@@ -19,7 +19,7 @@ export default function TestimonialSection() {
       <div className="max-w-5xl mx-auto text-center px-4 overflow-x-hidden">
         {/* Subtitle */}
         <div
-          className="font-bold text-[16px] leading-6 mb-4 font-[Roboto]"
+          className="font-bold text-[14px] md:text-[16px] leading-6 mb-4 font-[Inter]"
           style={{
             background: "linear-gradient(90deg,#1B4CFA,#102C90)",
             WebkitBackgroundClip: "text",
@@ -30,12 +30,12 @@ export default function TestimonialSection() {
         </div>
 
         {/* Title */}
-        <h2 className="text-[24px] md:text-[36px] font-bold text-[#1a1a1a] mb-6 font-[Roboto]">
+        <h2 className="text-[24px] md:text-[32px] font-bold text-[#1a1a1a] mb-6 font-[Inter]">
           {title}
         </h2>
 
         {/* Description */}
-        <p className="text-[16px] md:text-[18px] font-medium text-[#1a1a1a] max-w-2xl mx-auto mb-10 font-[Roboto]">
+        <p className="text-[16px] md:text-[18px] font-medium text-[#1a1a1a] max-w-2xl mx-auto mb-10 font-[Inter]">
           {description}
         </p>
 
@@ -49,14 +49,24 @@ export default function TestimonialSection() {
 }
 
 function VideoRow() {
-  const videoId = "eGi447l2_mM";
-  const videoSi = "9dUYd4P5ds3omeOQ";
   const items = [
-    { img: "/images/testimonial/loung_coffee.webp", caption: "Cafe Lounge" },
-    { img: "/images/testimonial/willow_coffee.webp", caption: "Willow Coffee" },
+    {
+      img: "/images/testimonial/loung_coffee.webp",
+      caption: "Cafe Lounge",
+      videoId: "lTYwpANidX4",
+      videoSi: "naY-J-GMJyEpgiFA",
+    },
+    {
+      img: "/images/testimonial/willow_coffee.webp",
+      caption: "Willow Coffee",
+      videoId: "1ErTMLL-QrQ",
+      videoSi: "UpBmOPN1A6zsG0SM",
+    },
     {
       img: "/images/testimonial/pang_coffee.webp",
       caption: "1987 Pang & Cafe",
+      videoId: "a9zqWXhw0R4",
+      videoSi: "gIiuPT0g2vPO4TO7",
     },
   ];
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
@@ -117,6 +127,7 @@ function VideoRow() {
           const originalIdx = items.findIndex(
             (item) => item.caption === it.caption
           );
+          const currentVideo = items[originalIdx];
           return (
             <div
               key={`${it.caption}-${position}`}
@@ -129,7 +140,7 @@ function VideoRow() {
               {playingIndex === originalIdx && isCenter ? (
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videoId}?si=${videoSi}&rel=0&autoplay=1`}
+                  src={`https://www.youtube.com/embed/${currentVideo.videoId}?si=${currentVideo.videoSi}&rel=0&autoplay=1`}
                   title={`Testimonial video ${originalIdx}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -210,6 +221,7 @@ function VideoRow() {
           const originalIdx = items.findIndex(
             (item) => item.caption === it.caption
           );
+          const currentVideo = items[originalIdx];
           // sizes: smaller frames for mobile, medium for tablet
           const width = isCenter ? 280 : 200;
           const height = isCenter ? 500 : 360;
@@ -227,7 +239,7 @@ function VideoRow() {
               {playingIndex === originalIdx && isCenter ? (
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videoId}?si=${videoSi}&rel=0&autoplay=1`}
+                  src={`https://www.youtube.com/embed/${currentVideo.videoId}?si=${currentVideo.videoSi}&rel=0&autoplay=1`}
                   title={`Testimonial video ${originalIdx}`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

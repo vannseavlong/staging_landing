@@ -113,15 +113,22 @@ const FAQSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16">
         <div className="text-center mb-20 md:mb-24">
           <div className="flex items-center justify-center mb-4">
-            <span className="text-[18px] font-bold text-[#102C90] uppercase tracking-wide">
+            <span
+              className="text-[14px] md:text-[16px] font-bold uppercase tracking-wide font-[Inter]"
+              style={{
+                background: "linear-gradient(90deg,#1B4CFA,#102C90)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
               {displayData.header.subtitle}
             </span>
           </div>
-          <h2 className="text-[28px] md:text-[32px] font-extrabold text-[#1A1A1A] leading-tight">
+          <h2 className="text-[24px] md:text-[32px] font-extrabold text-[#1A1A1A] leading-tight font-[Inter]">
             {displayData.header.title}
           </h2>
           <div className="mx-auto mt-6 max-w-xl px-4">
-            <span className="text-[18px] font-medium text-[#3D3D3D] leading-relaxed">
+            <span className="text-[16px] md:text-[18px] font-medium text-[#3D3D3D] leading-relaxed font-[Inter]">
               {displayData.header.description}
             </span>
           </div>
@@ -131,19 +138,36 @@ const FAQSection: React.FC = () => {
           {categories.length > 0 ? (
             <>
               <div className="flex md:flex-col gap-2 md:min-w-[250px] mb-6 md:mb-0 overflow-x-auto md:overflow-visible">
-                {categories.map((category, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleCategoryClick(category)}
-                    className={`cursor-pointer text-left px-3 py-2 text-[16px] font-medium text-[#1A1A1A] ${
-                      activeCategory === category
-                        ? "bg-gray-100 rounded-lg md:rounded-xl"
-                        : "hover:bg-gray-50"
-                    } mr-3 md:mr-0 whitespace-nowrap`}
-                  >
-                    {category}
-                  </div>
-                ))}
+                {categories.map((category, index) => {
+                  const isActive = activeCategory === category;
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => handleCategoryClick(category)}
+                      className={`cursor-pointer text-left px-3 py-2 text-[14px] md:text-[16px] lg:text-[18px] font-medium font-[Inter] mr-3 md:mr-0 whitespace-nowrap ${
+                        isActive
+                          ? "bg-gray-100 rounded-lg lg:bg-transparent text-[#1A1A1A]"
+                          : "text-[#1A1A1A] hover:bg-gray-50 lg:hover:bg-transparent"
+                      }`}
+                    >
+                      {isActive ? (
+                        <span
+                          className="hidden lg:inline"
+                          style={{
+                            background: "linear-gradient(90deg,#1B4CFA,#102C90)",
+                            WebkitBackgroundClip: "text",
+                            color: "transparent",
+                          }}
+                        >
+                          {category}
+                        </span>
+                      ) : null}
+                      <span className={isActive ? "lg:hidden" : ""}>
+                        {category}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="flex-1">
@@ -168,7 +192,7 @@ const FAQSection: React.FC = () => {
                             >
                               {isOpen ? "\u2212" : "+"}
                             </span>
-                            <span className="flex-1 text-[18px] font-semibold text-[#1A1A1A]">
+                            <span className="flex-1 text-[16px] md:text-[18px] font-medium text-[#1A1A1A] font-[Inter]">
                               {faq?.question || ""}
                             </span>
                           </button>
@@ -180,7 +204,7 @@ const FAQSection: React.FC = () => {
                                 : "max-h-0 opacity-0 py-0"
                             }`}
                           >
-                            <div className="text-[16px] font-medium text-gray-700 leading-[150%]">
+                            <div className="text-[14px] md:text-[16px] font-medium text-gray-700 leading-[150%] font-[Inter]">
                               <p>{faq?.answer || ""}</p>
                             </div>
                           </div>
