@@ -41,11 +41,11 @@ const FeatureSectionWithDividers: FC = () => {
         <div className="hidden md:hidden lg:flex divide-x divide-gray-200 border-t border-b border-r border-l">
           {features.map((item, i) => (
             <div key={i} className="flex-1 p-8 text-center">
-              <div className="flex lg:justify-center mb-4">{item.icon}</div>
-              <h3 className="text-[20px] font-inter font-bold text-[#1A1A1A] mb-2">
+              <div className="flex lg:justify-center mb-5">{item.icon}</div>
+              <h3 className="text-[20px] font-[Inter] font-bold text-[#1A1A1A] mb-5">
                 {item.title}
               </h3>
-              <p className="text-[#3D3D3D] font-inter text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
+              <p className="text-[#3D3D3D] font-[Inter] text-base lg:justify-center lg:justify-items-center lg:text-center leading-relaxed w-[300px] h-[72px]">
                 {item.description}
               </p>
             </div>
@@ -59,7 +59,7 @@ const FeatureSectionWithDividers: FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm justify-center leading-relaxed">
+              <p className="text-gray-600 w-[250px] mx-auto text-sm text-center leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -94,7 +94,7 @@ const Para = () => {
   };
 
   return (
-    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-inter">
+    <section className="bg-white md:py-20 lg:py-5 lg:px-10 md:px-10 px-5 text-white font-[Inter]">
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-0 md:mb-5">
@@ -122,7 +122,7 @@ const Para = () => {
         {/* Background layer (relative to this section only) */}
         <div className="absolute inset-0">
           {/* Mobile */}
-          <div className="block md:hidden bg-[url('/images/Why_Choose_us_Draft_mobile.png')] bg-no-repeat bg-contain bg-center bg-fixed  h-full w-full"></div>
+          <div className="block md:hidden bg-[url('/images/Why_Choose_us_Draft_mobile.png')] bg-no-repeat bg-contain bg-center   h-full w-full"></div>
 
           {/* Tablet */}
           <div className="hidden md:block lg:hidden bg-[url('/images/Why_Choose_us_tablet.png')] bg-no-repeat bg-contain bg-center bg-fixed h-full w-full"></div>
