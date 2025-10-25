@@ -27,7 +27,7 @@ export default function ContactSection() {
       {/* Header */}
       <div className="mb-5 mt-10">
         <div className="flex items-center text-black mb-5 lg:mb-5 md:mb-5">
-          <h5 className="font-[Inter] text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80">
+          <h5 className="text-base font-bold leading-[24px] tracking-[2px] text-beasy-gradient mr-4 whitespace-nowrap opacity-80 font-sans">
             {header.subtitle}
           </h5>
         </div>
@@ -35,11 +35,11 @@ export default function ContactSection() {
 
       {/* Heading + Description */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 md:gap-10 text-left">
-        <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold font-[Inter] tracking-widest leading-snug">
+        <h1 className="w-full lg:w-[500px] text-black text-[24px] md:text-[32px] lg:text-[32px] font-bold tracking-widest leading-snug font-sans">
           {header.title}
         </h1>
         <div className="flex justify-start w-full mb-13 md:justify-items-start lg:justify-end lg:w-[60%] lg:py-0">
-          <p className="text-[#3D3D3D] font-[Inter] text-lg font-normal leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify">
+          <p className="text-[#3D3D3D] text-lg font-normal leading-[150%] lg:max-w-[600px] md:max-w-[600px] text-justify font-sans">
             {header.description}
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function ContactSection() {
             data-aos-delay="200"
           >
             <a
-              href="https://maps.app.goo.gl/gpXUP1TSj3rKPPn29"
+              href="https://www.google.com/maps/place/Flatiron+by+Meridian/@11.5727473,104.9051283,17z"
               target="_blank"
               rel="noopener noreferrer"
               className="block h-full w-full"
@@ -64,7 +64,7 @@ export default function ContactSection() {
               <div className="hidden lg:block w-full h-auto max-w-[600px] lg:-mt-8">
                 <Image
                   className="w-full h-full object-cover "
-                  src="/images/location6.png"
+                  src="/images/location.png"
                   alt="Location map (desktop)"
                   width={600}
                   height={400}
@@ -76,7 +76,7 @@ export default function ContactSection() {
               <div className="hidden md:block lg:hidden w-screen -mx-6 h-auto">
                 <Image
                   className="w-full h-full object-cover"
-                  src="/images/location6.png"
+                  src="/images/location.png"
                   alt="Location map (tablet)"
                   width={1200}
                   height={500}
@@ -88,7 +88,7 @@ export default function ContactSection() {
               <div className="block md:hidden w-screen -mx-6 h-auto">
                 <Image
                   className="w-full h-full object-cover"
-                  src="/images/location6.png"
+                  src="/images/location.png"
                   alt="Location map (mobile)"
                   width={800}
                   height={400}
@@ -101,7 +101,7 @@ export default function ContactSection() {
 
         {/* Contact Details */}
 
-        <div className="flex-1 order-2 lg:order-1 lg:max-w-[50%] lg:mt-10 ">
+        <div className="flex-1 order-2 lg:order-1 lg:max-w-[50%] lg:mt-20 ">
           <div className="flex flex-col space-y-12 md:space-y-8 md-10">
             {/* Location */}
             <div>
